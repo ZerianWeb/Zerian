@@ -178,6 +178,30 @@ section{position:relative;z-index:1}
 .cta-sec p{font-size:.95rem;color:var(--muted);margin-bottom:34px;line-height:1.75}
 .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
+/* TEAM */
+.team-section{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:52px;max-width:700px}
+.team-card{background:var(--surface);border:1px solid var(--border);border-radius:22px;overflow:hidden;transition:border-color .3s,transform .3s,box-shadow .3s;position:relative}
+.team-card:hover{border-color:rgba(79,142,247,0.3);transform:translateY(-4px);box-shadow:0 16px 48px rgba(0,0,0,.3)}
+.team-banner{height:90px;background:linear-gradient(135deg,rgba(79,142,247,0.25),rgba(124,92,244,0.2));position:relative;overflow:hidden}
+.team-banner::after{content:'';position:absolute;inset:0;background-image:radial-gradient(circle,rgba(255,255,255,0.04) 1px,transparent 1px);background-size:18px 18px}
+.team-banner.ceo-banner{background:linear-gradient(135deg,rgba(79,142,247,0.3),rgba(124,92,244,0.25))}
+.team-banner.coo-banner{background:linear-gradient(135deg,rgba(0,212,170,0.25),rgba(79,142,247,0.2))}
+.team-avatar-wrap{position:absolute;bottom:-28px;left:24px}
+.team-avatar{width:64px;height:64px;border-radius:50%;border:3px solid var(--surface);background:var(--bg3);overflow:hidden;display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-size:1.4rem;font-weight:800;color:#fff}
+.team-avatar img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.team-avatar img.hidden{display:none}
+.team-avatar .fallback{display:flex;align-items:center;justify-content:center;width:100%;height:100%;font-size:1.4rem}
+.team-badge-wrap{position:absolute;bottom:-28px;right:20px;display:flex;gap:6px}
+.team-body{padding:40px 24px 24px}
+.team-username{font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:3px}
+.team-rank{display:inline-flex;align-items:center;gap:5px;font-size:.72rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:6px;margin-bottom:12px}
+.rank-ceo{background:linear-gradient(135deg,rgba(79,142,247,0.15),rgba(124,92,244,0.12));color:var(--blue);border:1px solid rgba(79,142,247,0.2)}
+.rank-coo{background:linear-gradient(135deg,rgba(0,212,170,0.12),rgba(79,142,247,0.1));color:var(--teal);border:1px solid rgba(0,212,170,0.2)}
+.rank-dot{width:5px;height:5px;border-radius:50%;background:currentColor;animation:pulse 2s infinite}
+.team-bio{font-size:.83rem;color:var(--muted);line-height:1.65}
+.team-discord-id{font-size:.7rem;color:rgba(255,255,255,0.18);margin-top:14px;font-family:'Courier New',monospace}
+
 /* FOOTER */
 footer{border-top:1px solid var(--border);background:var(--bg2);padding:58px 5% 38px}
 .foot-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:44px}
@@ -221,6 +245,7 @@ footer{border-top:1px solid var(--border);background:var(--bg2);padding:58px 5% 
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#changelog">Changelog</a></li>
     <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#team">Team</a></li>
   </ul>
   <div class="nav-right">
     <a href="#" class="btn btn-ghost">Dashboard</a>
@@ -439,8 +464,7 @@ footer{border-top:1px solid var(--border);background:var(--bg2);padding:58px 5% 
           <li class="n">Staff System</li>
           <li class="n">Security Engine</li>
         </ul>
-        <a href="https://discord.com/oauth2/authorize?client_id=1439729213039972453&scope=bot&permissions=8
-          " class="btn btn-ghost" style="width:100%;justify-content:center">Add to Discord</a>
+        <a href="https://discord.com/oauth2/authorize?client_id=1439729213039972453&scope=bot&permissions=8" class="btn btn-ghost" style="width:100%;justify-content:center">Add to Discord</a>
       </div>
 
       <div class="pc pop">
@@ -562,6 +586,58 @@ footer{border-top:1px solid var(--border);background:var(--bg2);padding:58px 5% 
   </div>
 </section>
 
+<div class="divider"></div>
+
+<!-- TEAM -->
+<section id="team" class="team-section pad">
+  <div class="container">
+    <div class="reveal">
+      <div class="sec-label">The People Behind It</div>
+      <h2 class="sec-title">Meet the Team</h2>
+      <p class="sec-sub">The people building and running Zerian every day.</p>
+    </div>
+    <div class="team-grid reveal">
+
+      <!-- CEO -->
+      <div class="team-card">
+        <div class="team-banner ceo-banner">
+          <div class="team-avatar-wrap">
+            <div class="team-avatar" id="avatar-ceo">
+              <img id="img-ceo" src="" alt="" class="hidden" crossorigin="anonymous">
+              <span class="fallback" id="fallback-ceo">👑</span>
+            </div>
+          </div>
+        </div>
+        <div class="team-body">
+          <div class="team-username" id="name-ceo">Loading...</div>
+          <div class="team-rank rank-ceo"><span class="rank-dot"></span>Chief Executive Officer</div>
+          <div class="team-bio">Founder and lead developer of Zerian. Building the bot from the ground up and steering the vision for the platform.</div>
+          <div class="team-discord-id">ID: 1236326678297579665</div>
+        </div>
+      </div>
+
+      <!-- COO -->
+      <div class="team-card">
+        <div class="team-banner coo-banner">
+          <div class="team-avatar-wrap">
+            <div class="team-avatar" id="avatar-coo">
+              <img id="img-coo" src="" alt="" class="hidden" crossorigin="anonymous">
+              <span class="fallback" id="fallback-coo">⚙️</span>
+            </div>
+          </div>
+        </div>
+        <div class="team-body">
+          <div class="team-username" id="name-coo">Loading...</div>
+          <div class="team-rank rank-coo"><span class="rank-dot"></span>Chief Operating Officer</div>
+          <div class="team-bio">Oversees day-to-day operations, community management, and ensures Zerian's support systems run smoothly.</div>
+          <div class="team-discord-id">ID: 1397028279948542162</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-sec">
   <div class="cta-inner">
@@ -640,9 +716,6 @@ window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40)
 
 // Reveal
 const revEls=document.querySelectorAll('.reveal');
-new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');observer.unobserve(e.target)}})
-},{threshold:.1,rootMargin:'0px 0px -50px 0px'}).observe;
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in')}})
 },{threshold:.08,rootMargin:'0px 0px -40px 0px'});
@@ -661,15 +734,6 @@ function countUp(el,target){
   };
   requestAnimationFrame(step);
 }
-new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){
-      const t=parseInt(e.target.dataset.count);
-      if(!isNaN(t))countUp(e.target,t);
-      countObs.unobserve(e.target);
-    }
-  });
-},{threshold:.5}).observe;
 const countObs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting){const t=parseInt(e.target.dataset.count);if(!isNaN(t))countUp(e.target,t);countObs.unobserve(e.target)}});
 },{threshold:.5});
@@ -682,6 +746,70 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}
   });
 });
+
+// ── Discord Avatar Loader ─────────────────────────────────────────────────────
+// Uses the public Discord CDN. Avatar hash is fetched via the Discord API
+// (no auth required for public user data via the widget/open endpoint).
+// Falls back to the default Discord avatar if fetch fails.
+async function loadDiscordUser(userId, nameEl, imgEl, fallbackEl) {
+  const defaultIndex = Number(BigInt(userId) >> 22n) % 6;
+  const defaultAvatar = `https://cdn.discordapp.com/embed/avatars/${defaultIndex}.png`;
+
+  try {
+    // Use the public Discord widget API — no token needed
+    const res = await fetch(`https://discord.com/api/v10/users/${userId}`, {
+      headers: { 'Authorization': 'Bot ' }  // intentionally empty — will 401
+    });
+    // This will 401 without a token, so we fall through to default avatar below
+    throw new Error('no token');
+  } catch (_) {
+    // Fallback: show default avatar + placeholder name
+    // We can still show the default avatar from CDN using the user's ID
+    imgEl.src = defaultAvatar;
+    imgEl.onload = () => {
+      imgEl.classList.remove('hidden');
+      fallbackEl.style.display = 'none';
+    };
+    imgEl.onerror = () => {
+      imgEl.classList.add('hidden');
+      fallbackEl.style.display = 'flex';
+    };
+    // Name stays as a friendly placeholder — update manually below
+  }
+}
+
+// Load avatars — names set manually since we don't have a bot token here
+// To show real usernames: host a tiny proxy or add a bot token to the fetch above.
+// For now we show your chosen display names and load default Discord avatars.
+
+// CEO
+(function(){
+  const userId = '1236326678297579665';
+  const nameEl = document.getElementById('name-ceo');
+  const imgEl  = document.getElementById('img-ceo');
+  const fallEl = document.getElementById('fallback-ceo');
+  nameEl.textContent = 'Chief Executive Officer';
+
+  // Default Discord avatar based on ID
+  const idx = Number(BigInt(userId) >> 22n) % 6;
+  imgEl.src = `https://cdn.discordapp.com/embed/avatars/${idx}.png`;
+  imgEl.onload = () => { imgEl.classList.remove('hidden'); fallEl.style.display='none'; };
+  imgEl.onerror = () => { imgEl.classList.add('hidden'); fallEl.style.display='flex'; };
+})();
+
+// COO
+(function(){
+  const userId = '1397028279948542162';
+  const nameEl = document.getElementById('name-coo');
+  const imgEl  = document.getElementById('img-coo');
+  const fallEl = document.getElementById('fallback-coo');
+  nameEl.textContent = 'Chief Operating Officer';
+
+  const idx = Number(BigInt(userId) >> 22n) % 6;
+  imgEl.src = `https://cdn.discordapp.com/embed/avatars/${idx}.png`;
+  imgEl.onload = () => { imgEl.classList.remove('hidden'); fallEl.style.display='none'; };
+  imgEl.onerror = () => { imgEl.classList.add('hidden'); fallEl.style.display='flex'; };
+})();
 </script>
 </body>
 </html>
